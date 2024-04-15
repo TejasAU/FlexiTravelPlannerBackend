@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import logger from "./utils/logger.js";
 import config from "./utils/config.js";
 import middleware from "./utils/middleware.js";
+import userRouter from "./routes/userRoute.js"
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use(middleware.requestLogger);
 
 // Add all routes here
 //app.use('/api/blogs', blogsRouter)
+app.use('/api/users', userRouter )
 
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);
