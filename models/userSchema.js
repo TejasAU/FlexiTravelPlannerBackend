@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 // Define the user schema
 const userSchema = new mongoose.Schema(
     {
-      username: {
+      name: {
         type: String,
         required: true,
         unique: true,
@@ -17,17 +17,9 @@ const userSchema = new mongoose.Schema(
         type: String,
         required: true,
       },
-  
-      photo: {
-        type: String,
-      },
-  
-      role: {
-        type: String,
-        default: "user",
-      },
+
     },
-    { timestamps: true }
+    
   );
 
 // Create and export the User model
