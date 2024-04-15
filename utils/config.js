@@ -1,9 +1,10 @@
-require('dotenv').config()
+import dotenv from 'dotenv'
 
+dotenv.config()
 let PORT = process.env.PORT
 let MONGODB_URI = process.env.MONGODB_URI
 
-module.exports = {
+export default {
     MONGODB_URI,
     PORT
 }
