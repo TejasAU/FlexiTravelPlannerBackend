@@ -2,10 +2,10 @@ import express from "express";
 
 // Importing Controllers 
 
-import { creatUser } from '../controllers/userController';
+import { createUser } from '../controllers/userController';
 
 const router = express.Router();
 
-router.route( '/users' ).post(creatUser);
+router.route( '/users' ).post(createUser);
 
 export default  router;

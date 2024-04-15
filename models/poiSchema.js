@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 // Define the schema for Points of Interest (POIs)
 const poiSchema = new mongoose.Schema({
@@ -31,4 +31,4 @@ const poiSchema = new mongoose.Schema({
 // Create the POI model using the poiSchema
 const POI = mongoose.model('POI', poiSchema);
 
-module.exports = POI;
+export default POI;
