@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 // Define the schema for activities within the itinerary
 const activitySchema = new mongoose.Schema({
@@ -48,4 +48,4 @@ const itinerarySchema = new mongoose.Schema({
 // Create the Itinerary model using the itinerarySchema
 const Itinerary = mongoose.model('Itinerary', itinerarySchema);
 
-module.exports = Itinerary;
+export default Itinerary;
