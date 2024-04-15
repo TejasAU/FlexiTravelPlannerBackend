@@ -1,4 +1,4 @@
-import User from '../models/userSchema'; // Import the User model
+import User from '../models/userSchema.js'; // Import the User model
 
 // Route handler for creating a new user
 async function createUser(req, res) {
@@ -21,4 +21,6 @@ async function createUser(req, res) {
   }
 }
 
-export default createUser;
+export { 
+  createUser
+};
