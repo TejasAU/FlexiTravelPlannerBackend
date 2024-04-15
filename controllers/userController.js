@@ -21,6 +21,27 @@ async function createUser(req, res) {
   }
 }
 
+async function getUserInfo(req, res) {
+  try {   
+      const { email, password } = req.body;
+      const user = await User.findOne({
+          $and: [
+              { email: email },
+              { password: password },
+          ]
+      });
+      if(user) 
+          return res.status(200).json( { userId: user._id, name: user.name } ) ;
+      else
+          return res.status(500).json( {message: 'User not found'} )
+      
+  } catch (error) {
+      console.error(error); // Log the error for debugging
+      res.status(500).json({ message: error.message })  
+  }
+};
+
 export { 
-  createUser
+  createUser,
+  getUserInfo
 };
