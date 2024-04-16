@@ -5,14 +5,17 @@ import {
     createItinerary,
     getAllItineraries,
     updateActivity,
-    deleteActivity
+    deleteActivity,
+    getItineraryById,
+    createActivity
 } from '../controllers/itineraryController.js'
 
 const router = express.Router();
 
 router.route('/createItinerary').post(createItinerary); // Create a new Itinerary
-router.route("/getAllItinerary").get(getAllItineraries); // Get all the itineraries
-router.route('/updateActivity').get(updateActivity); // Get an Itinerary by its title
-router.route('/deleteActivity').delete(deleteActivity); // Delete an Itinerary with specific Title
-
+router.route("/getAllItinerary/:userId").get(getAllItineraries); // Get all the itineraries
+router.route("/getItineraryById/:itineraryId").get(getItineraryById); // Get all the itineraries
+router.route("/createActivity").post(createActivity);
+router.route("/updateActivity").patch(updateActivity); // Get all the itineraries
+router.route('/deleteActivity/:activityId').delete(deleteActivity);
 export default router;

@@ -25,9 +25,21 @@ const activitySchema = new mongoose.Schema({
 
 // Define the main itinerary schema
 const itinerarySchema = new mongoose.Schema({
-  User_id: {
+  userId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User', 
+    required: true,
+  },
+  cityId: {
+    type: String,
+    required: true,
+  },
+  cityName: {
+    type: String,
+    required: true,
+  },
+  desc: {
+    type: String,
     required: true,
   },
   isPublic: {
@@ -37,7 +49,7 @@ const itinerarySchema = new mongoose.Schema({
   schedule: [
     {
       date: {
-        type: Date, // Date type for the schedule date
+        type: String, // Date type for the schedule date
         required: true,
       },
       activities: [activitySchema], // Embed activitySchema within schedule
