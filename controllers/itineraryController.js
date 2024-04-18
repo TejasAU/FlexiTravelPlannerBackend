@@ -1,6 +1,5 @@
-import Itinerary from "../models/itinerarySchema.js"; // Import the Itinerary model
+import Itinerary from "../models/itinerarySchema.js";
 
-// Controller function to create a new itinerary
 export const createItinerary = async (req, res) => {
     try {
         console.log(req.body);
@@ -23,7 +22,6 @@ export const createItinerary = async (req, res) => {
     }
 };
 
-// Controller function to fetch all itineraries
 export const getItinerariesByUser = async (req, res) => {
     try {
         const { userId } = req.params;
@@ -34,7 +32,6 @@ export const getItinerariesByUser = async (req, res) => {
     }
 };
 
-// Controller function to fetch all itineraries
 export const getItineraryById = async (req, res) => {
     try {
         const { itineraryId } = req.params;

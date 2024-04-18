@@ -22,17 +22,22 @@ mongoose
         logger.error("error connection to MongoDB:", error.message);
     });
 
-app.use(cors());
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    next();
+});
 app.use(express.static("dist"));
 app.use(express.json());
 app.use(middleware.requestLogger);
 
-app.use('/api/users', userRouter );
-app.use('/api/itinerary', itineraryRouter);
+app.use("/api/users", userRouter);
+app.use("/api/itinerary", itineraryRouter);
 
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);
 
 app.listen(config.PORT, () => {
-  logger.info(`Server running on port ${config.PORT}`)
-})
+    logger.info(`Server running on port ${config.PORT}`);
+});

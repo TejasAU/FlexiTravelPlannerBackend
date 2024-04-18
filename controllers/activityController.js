@@ -1,4 +1,4 @@
-import Itinerary from "../models/itinerarySchema.js"; // Import the Itinerary model
+import Itinerary from "../models/itinerarySchema.js"; 
 
 
 export const createActivity = async (req, res) => {
